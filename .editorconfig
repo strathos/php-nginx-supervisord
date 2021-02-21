@@ -1,0 +1,22 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+max_line_length = null
+trim_trailing_whitespace = true
+
+[{.,}*.{ts{,*},y{a,}ml}]
+indent_size = 2
+
+[*.{md,txt}]
+indent_size = 4
+trim_trailing_whitespace = false
+
+[nginx*.conf]
+indent_size = 4
+
+[Makefile]
+indent_style = tab
