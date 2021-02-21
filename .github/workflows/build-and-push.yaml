@@ -2,9 +2,13 @@ name: Build and push the image
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * 0"
 
 jobs:
   build:
@@ -23,4 +27,4 @@ jobs:
           context: .
           pull: true
           push: true
-          tags: php-nginx-supervisord:latest
+          tags: strathos/php-nginx-supervisord:latest
