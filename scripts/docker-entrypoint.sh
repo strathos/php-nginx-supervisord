@@ -13,4 +13,13 @@ if [ -n "${PGID-}" ]; then
   chown -R www-data:www-data /var/www
 fi
 
+until nc -z -v -w30 "${DB_HOST}" 3306; do
+  echo "Waiting for database connection..."
+  sleep 5
+done
+
+drush updb -y
+drush cim -y
+drush cr -y
+
 exec "${@}"
