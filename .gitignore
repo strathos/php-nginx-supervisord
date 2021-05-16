@@ -1,2 +1,8 @@
 src
 docker-compose.*
+
+# Mac files
+.DS_Store
+
+# Plasma desktop
+.directory
