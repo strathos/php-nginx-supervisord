@@ -13,7 +13,7 @@ Nginx is listening on 8080 and running as www-data (non-root).
 
 Nginx and php-fpm are connected via Unix socket (unix:/run/php-fpm.sock) instead of TCP socket. However as the parent Dockerfile exposes the port 9000, it will be listed as exposed even though nothing is listening on it.
 
-Included tools are Composer and the runner for Drush.
+Included tools are Composer 2 and the runner for Drush.
 
 Example docker-compose.yml file for development work:
 ```yaml
