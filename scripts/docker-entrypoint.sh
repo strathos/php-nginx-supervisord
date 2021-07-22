@@ -18,8 +18,10 @@ until nc -z -v -w30 "${DB_HOST}" 3306; do
   sleep 5
 done
 
-drush updb -y
-drush cim -y
-drush cr -y
+if [ -f composer.json ]; then
+  drush updb -y
+  drush cim -y
+  drush cr -y
+fi
 
 exec "${@}"
