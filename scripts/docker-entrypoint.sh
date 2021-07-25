@@ -18,11 +18,11 @@ until nc -z -v -w30 "${DB_HOST}" 3306; do
   sleep 5
 done
 
-if [ -d src/vendor/drush ]; then
+if [ -d vendor/drush ]; then
   drush cr -y
   drush updb -y
 
-  if [ -d src/config/sync ]; then
+  if [ -d config/sync ]; then
     drush cim -y
     drush cr -y
   fi
