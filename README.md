@@ -27,7 +27,7 @@ services:
     #  PUID: 1001
     #  PGID: 1001
     ports:
-      - 8888:8080
+      - 8080:8080
     volumes:
       - ./src:/var/www/html/web
 ```
