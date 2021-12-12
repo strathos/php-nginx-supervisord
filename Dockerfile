@@ -1,5 +1,5 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
-FROM php:7.4-fpm-alpine
+FROM php:8.0-fpm-alpine
 
 RUN set -eux; \
   apk add --update --no-cache \
@@ -11,7 +11,7 @@ RUN set -eux; \
   ghostscript \
   gmp \
   icu-libs \
-  imagemagick\
+  imagemagick \
   jpegoptim \
   less \
   libbz2 \
@@ -89,7 +89,6 @@ RUN set -eux; \
   soap \
   sockets \
   tidy \
-  xmlrpc \
   xsl \
   zip \
   ; \
@@ -109,6 +108,7 @@ RUN set -eux; \
   uploadprogress \
   uuid \
   yaml \
+  channel://pecl.php.net/xmlrpc-1.0.0RC3 \
   ; \
   docker-php-ext-enable \
   apcu \
@@ -125,6 +125,7 @@ RUN set -eux; \
   uploadprogress \
   uuid \
   yaml \
+  xmlrpc \
   ; \
   mv /usr/local/etc/php/conf.d/docker-php-ext-event.ini /usr/local/etc/php/conf.d/z-docker-php-ext-event.ini; \
   runDeps="$( \
