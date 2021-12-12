@@ -4,7 +4,7 @@ FROM php:7.4-fpm-alpine
 RUN set -eux; \
   apk add --update --no-cache \
   bash \
-  c-client=2007f-r11 \
+  c-client=2007f-r13 \
   fcgi \
   findutils \
   freetype \
