@@ -1,6 +1,9 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
 FROM php:8.0-fpm-alpine
 
+# Workaround from https://github.com/docker-library/php/issues/1245
+ENV CFLAGS="$CFLAGS -D_GNU_SOURCE"
+
 RUN set -eux; \
   apk add --update --no-cache \
   bash \
