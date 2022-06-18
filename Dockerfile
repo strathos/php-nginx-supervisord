@@ -31,6 +31,7 @@ RUN set -eux; \
   libxml2 \
   libxslt \
   libzip \
+  mysql-client \
   nginx \
   patch \
   pngquant \
