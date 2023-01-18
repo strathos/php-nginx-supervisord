@@ -9,6 +9,7 @@ RUN set -eux; \
   findutils \
   freetype \
   ghostscript \
+  git \
   gmp \
   icu-libs \
   imagemagick \
