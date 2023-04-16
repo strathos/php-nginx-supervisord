@@ -1,5 +1,5 @@
 # Alpine + php-fpm + nginx + supervisord
-This image is based on Alpine Linux and bundles php-fpm, Nginx and supervisord in a one image.
+This image is based on Alpine Linux and bundles php-fpm, Nginx and Supervisord in a one image.
 ## Why?
 As php applications usually run a separate php-fpm and a web server, it's hard to include static files to a build. I know this is against container philosophy to have multiple applications in a single container, but with php there really isn't a good way to handle this.
 
