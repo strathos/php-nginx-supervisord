@@ -1,5 +1,5 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
-FROM php:8.1-fpm-alpine
+FROM php:8.2-fpm-alpine
 
 RUN set -eux; \
   apk add --update --no-cache \
@@ -62,6 +62,7 @@ RUN set -eux; \
   libwebp-dev \
   libxslt-dev \
   libzip-dev \
+  linux-headers \
   openldap-dev \
   openssl-dev \
   pcre-dev \
