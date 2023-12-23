@@ -161,11 +161,6 @@ RUN usermod -u 1000 www-data && \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install Drush Launcher
-RUN curl -L -sLo drush.phar https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar && \
-  chmod +x drush.phar && \
-  mv drush.phar /usr/local/bin/drush
-
 WORKDIR /var/www/html
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/bin/supervisord","-c","/etc/supervisor/conf.d/supervisord.conf"]

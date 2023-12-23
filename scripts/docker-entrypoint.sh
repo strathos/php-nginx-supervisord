@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+export PATH="/var/www/html/vendor/bin:${PATH}"
+
 if [ -n "${PUID-}" ]; then
     usermod -u "${PUID}" www-data
     chown www-data:www-data /home/www-data
@@ -13,12 +15,14 @@ if [ -n "${PGID-}" ]; then
     chown -R www-data:www-data /var/www
 fi
 
-until nc -z -v -w30 "${DB_HOST}" 3306; do
-    echo
-    echo "STARTUP: Waiting for database connection..."
-    echo
-    sleep 5
-done
+if [ -n "${DB_HOST-}" ]; then
+    until nc -z -v -w30 "${DB_HOST}" 3306; do
+        echo
+        echo "STARTUP: Waiting for database connection..."
+        echo
+        sleep 5
+    done
+fi
 
 if [ -d vendor/drush ]; then
     echo
