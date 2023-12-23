@@ -1,5 +1,5 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
-FROM php:8.3-fpm-alpine
+FROM php:8.2-fpm-alpine
 
 RUN set -eux; \
   apk add --update --no-cache \
