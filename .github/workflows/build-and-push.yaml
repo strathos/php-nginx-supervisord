@@ -40,7 +40,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-        if: env.ACT == 'false'
+        if: env.ACT != 'true'
 
       - name: Build and push
         uses: docker/build-push-action@v5
