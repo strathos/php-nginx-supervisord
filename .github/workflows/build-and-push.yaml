@@ -13,11 +13,18 @@ on:
       - 'README.md'
   schedule:
     - cron: '0 0 1 * *'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: LOCAL ACT ONLY - Set Platform
+        id: platform
+        run: |
+          echo "current_platform=${RUNNER_OS,,}/${RUNNER_ARCH,,}" >> "${GITHUB_OUTPUT}"
+        if: env.ACT == 'true'
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -33,12 +40,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+        if: env.ACT == 'false'
 
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: ${{ steps.platform.outputs.current_platform || 'linux/amd64,linux/arm64' }}
           pull: true
-          push: true
+          push: ${{ env.ACT == 'true' && 'false' || 'true' }}
           tags: strathos/php-nginx-supervisord:latest
