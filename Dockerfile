@@ -1,6 +1,8 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
 FROM php:8.3-fpm-alpine
 
+RUN env | sort
+
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN set -eux; \
