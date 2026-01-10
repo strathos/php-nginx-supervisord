@@ -1,12 +1,12 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
-FROM php:8.3-fpm-alpine
+FROM php:8.4-fpm-alpine
 
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN set -eux; \
   apk add --update --no-cache \
     bash \
-    c-client=2007f-r15 \
+    c-client=2007f-r16 \
     fcgi \
     findutils \
     freetype \
