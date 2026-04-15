@@ -28,7 +28,9 @@ if [ -d vendor/drush ]; then
     echo
     echo "DRUSH: Rebuilding cache..."
     echo
-    drush cr -y
+    if ! drush cr -y; then
+        echo "DRUSH: Initial cache rebuild failed; continuing to updates/config import."
+    fi
 
     echo
     echo "DRUSH: Applying any database updates..."
