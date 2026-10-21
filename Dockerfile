@@ -99,7 +99,7 @@ RUN set -eux; \
   \
   install-php-extensions Imagick/imagick@master \
   ; \
-  pecl install \
+  for extension in \
     apcu \
     ast \
     ds \
@@ -114,7 +114,19 @@ RUN set -eux; \
     uuid \
     yaml \
     channel://pecl.php.net/xmlrpc-1.0.0RC3 \
-  ; \
+  ; do \
+    module="${extension##*/}"; \
+    module="${module%%-*}"; \
+    attempt=1; \
+    until pecl install "$extension" && test -f "$(php-config --extension-dir)/$module.so"; do \
+      if [ "$attempt" -ge 3 ]; then \
+        echo "Failed to install PHP extension: $extension" >&2; \
+        exit 1; \
+      fi; \
+      attempt=$((attempt + 1)); \
+      sleep 5; \
+    done; \
+  done; \
   docker-php-ext-enable \
     apcu \
     ast \
