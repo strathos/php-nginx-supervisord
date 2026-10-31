@@ -1,0 +1,92 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "pinDigests": true,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^Dockerfile$/"
+      ],
+      "matchStrings": [
+        "\\s+(?:channel://pecl\\.php\\.net/)?(?<depName>apcu|ast|ds|event|igbinary|imagick|mcrypt|memcached|oauth|pcov|redis|uploadprogress|uuid|yaml)-(?<currentValue>\\d+\\.\\d+\\.\\d+(?:RC\\d+)?)\\s"
+      ],
+      "datasourceTemplate": "custom.pecl",
+      "versioningTemplate": "semver-coerced"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^Dockerfile$/"
+      ],
+      "matchStrings": [
+        "channel://pecl\\.php\\.net/(?<depName>xmlrpc)-(?<currentValue>\\d+\\.\\d+\\.\\d+(?:RC\\d+)?)\\s"
+      ],
+      "datasourceTemplate": "custom.pecl-prerelease",
+      "versioningTemplate": "semver-coerced"
+    }
+  ],
+  "customDatasources": {
+    "pecl": {
+      "defaultRegistryUrlTemplate": "https://pecl.php.net/rest/r/{{packageName}}/stable.txt",
+      "format": "plain"
+    },
+    "pecl-prerelease": {
+      "defaultRegistryUrlTemplate": "https://pecl.php.net/rest/r/{{packageName}}/latest.txt",
+      "format": "plain"
+    }
+  },
+  "packageRules": [
+    {
+      "description": "Keep Alpine package updates together, including matching runtime and development packages.",
+      "matchDatasources": [
+        "apk"
+      ],
+      "registryUrls": [
+        "https://dl-cdn.alpinelinux.org/alpine?branch=v3.24&components=main,community&arch=x86_64"
+      ],
+      "groupName": "Alpine packages"
+    },
+    {
+      "description": "Keep the Alpine release fixed; change the PHP tag and APK registry branch together when upgrading Alpine.",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "php"
+      ],
+      "allowedVersions": "/^8\\.5\\.\\d+-fpm-alpine3\\.24$/"
+    },
+    {
+      "matchDatasources": [
+        "custom.pecl-prerelease"
+      ],
+      "matchPackageNames": [
+        "xmlrpc"
+      ],
+      "ignoreUnstable": false
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "composer"
+      ],
+      "allowedVersions": "<3"
+    },
+    {
+      "description": "PECL marks 3.2.17RC1 stable; it is needed for PHP 8.5 compatibility.",
+      "matchDatasources": [
+        "custom.pecl"
+      ],
+      "matchPackageNames": [
+        "igbinary"
+      ],
+      "ignoreUnstable": false
+    }
+  ]
+}
