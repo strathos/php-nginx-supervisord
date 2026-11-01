@@ -41,6 +41,14 @@
   },
   "packageRules": [
     {
+      "description": "Keep GitHub Actions updates together in one PR.",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "GitHub Actions",
+      "separateMajorMinor": false
+    },
+    {
       "description": "Keep Alpine package updates together, including matching runtime and development packages.",
       "matchDatasources": [
         "apk"

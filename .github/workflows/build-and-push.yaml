@@ -4,13 +4,15 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
+    paths-ignore: &ignored-paths
       - 'README.md'
+      - 'renovate.json'
+      - '.editorconfig'
+      - '.gitignore'
   pull_request:
     branches:
       - main
-    paths-ignore:
-      - 'README.md'
+    paths-ignore: *ignored-paths
   workflow_dispatch:
 
 jobs:
