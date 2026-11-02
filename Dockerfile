@@ -13,7 +13,7 @@ RUN set -eux; \
     freetype-dev=2.14.3-r0 \
     gmp-dev=6.3.0-r4 \
     icu-dev=78.1-r0 \
-    imagemagick-dev=7.1.2.34-r0 \
+    imagemagick-dev=7.1.2.35-r0 \
     imap-dev=2007f-r16 \
     jpeg-dev=9f-r0 \
     krb5-dev=1.22.2-r1 \
@@ -121,7 +121,7 @@ RUN set -eux; \
     git=2.54.0-r0 \
     gmp=6.3.0-r4 \
     icu-libs=78.1-r0 \
-    imagemagick=7.1.2.34-r0 \
+    imagemagick=7.1.2.35-r0 \
     jpegoptim=1.5.6-r0 \
     less=702-r0 \
     libbz2=1.0.8-r6 \
