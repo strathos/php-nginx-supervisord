@@ -140,7 +140,7 @@ RUN set -eux; \
     libzip=1.11.4-r2 \
     mysql-client=11.8.9-r0 \
     nginx=1.30.6-r0 \
-    patch=2.8-r0 \
+    patch=2.8.1-r0 \
     pngquant=3.0.3-r0 \
     rsync=3.5.0-r0 \
     shadow=4.18.0-r1 \
