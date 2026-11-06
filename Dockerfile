@@ -142,7 +142,7 @@ RUN set -eux; \
     nginx=1.30.6-r0 \
     patch=2.8.1-r0 \
     pngquant=3.0.3-r0 \
-    rsync=3.5.0-r0 \
+    rsync=3.5.2-r0 \
     shadow=4.18.0-r1 \
     su-exec=0.3-r0 \
     supervisor=4.3.0-r1 \
