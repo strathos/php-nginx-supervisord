@@ -64,7 +64,7 @@ RUN set -eux; \
     apcu-5.1.28 \
     ast-1.1.4 \
     ds-2.0.0 \
-    event-3.1.6 \
+    event-3.2.0 \
     igbinary-3.2.17RC1 \
     imagick-3.8.1 \
     mcrypt-1.0.9 \
