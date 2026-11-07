@@ -49,24 +49,33 @@
       "separateMajorMinor": false
     },
     {
-      "description": "Keep Alpine package updates together, including matching runtime and development packages.",
+      "description": "Use the Alpine package registry matching the PHP base image release.",
       "matchDatasources": [
         "apk"
       ],
       "registryUrls": [
         "https://dl-cdn.alpinelinux.org/alpine?branch=v3.24&components=main,community&arch=x86_64"
       ],
-      "groupName": "Alpine packages"
+      "groupName": "Alpine",
+      "groupSlug": "alpine",
+      "separateMajorMinor": false,
+      "separateMinorPatch": false,
+      "rebaseWhen": "behind-base-branch"
     },
     {
-      "description": "Keep the Alpine release fixed; change the PHP tag and APK registry branch together when upgrading Alpine.",
+      "description": "Group the PHP Alpine base image with APK updates; change the PHP tag and APK registry branch together when upgrading Alpine.",
       "matchDatasources": [
         "docker"
       ],
       "matchPackageNames": [
         "php"
       ],
-      "allowedVersions": "/^8\\.5\\.\\d+-fpm-alpine3\\.24$/"
+      "allowedVersions": "/^8\\.5\\.\\d+-fpm-alpine3\\.24$/",
+      "groupName": "Alpine",
+      "groupSlug": "alpine",
+      "separateMajorMinor": false,
+      "separateMinorPatch": false,
+      "rebaseWhen": "behind-base-branch"
     },
     {
       "matchDatasources": [
