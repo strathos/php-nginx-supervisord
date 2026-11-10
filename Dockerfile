@@ -1,5 +1,5 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
-FROM php:8.5.12-fpm-alpine3.24@sha256:64535609509e0fd5c8529359e6b599a68ce42089defd565f7881efdae7687cea AS php-base
+FROM php:8.5.12-fpm-alpine3.24@sha256:951fb5b1780219b81d5daffa4cebef8e0077c537f3893d9790a5dfcd66ca334d AS php-base
 
 # Compile extensions separately so build tools and PECL artifacts stay out of runtime.
 FROM php-base AS extensions
@@ -16,7 +16,7 @@ RUN set -eux; \
     imagemagick-dev=7.1.2.35-r0 \
     imap-dev=2007f-r16 \
     jpeg-dev=9f-r0 \
-    krb5-dev=1.22.2-r1 \
+    krb5-dev=1.22.3-r0 \
     libevent-dev=2.1.13-r0 \
     libgcrypt-dev=1.12.2-r0 \
     libjpeg-turbo-dev=3.1.3-r0 \
@@ -25,7 +25,7 @@ RUN set -eux; \
     libpng-dev=1.6.59-r0 \
     libtool=2.6.0-r1 \
     libwebp-dev=1.6.0-r0 \
-    libxslt-dev=1.1.43-r3 \
+    libxslt-dev=1.1.43-r4 \
     libzip-dev=1.11.4-r2 \
     linux-headers=7.0.0-r1 \
     openldap-dev=2.6.15-r0 \
@@ -136,7 +136,7 @@ RUN set -eux; \
     libuuid=2.42.3-r1 \
     libwebp=1.6.0-r0 \
     libxml2=2.13.9-r2 \
-    libxslt=1.1.43-r3 \
+    libxslt=1.1.43-r4 \
     libzip=1.11.4-r2 \
     mysql-client=11.8.9-r0 \
     nginx=1.30.6-r0 \
