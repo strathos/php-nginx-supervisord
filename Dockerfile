@@ -118,7 +118,7 @@ RUN set -eux; \
     findutils=4.10.0-r1 \
     freetype=2.14.3-r0 \
     ghostscript=10.08.0-r0 \
-    git=2.54.0-r0 \
+    git=2.54.1-r0 \
     gmp=6.3.0-r4 \
     icu-libs=78.1-r0 \
     imagemagick=7.1.2.35-r0 \
