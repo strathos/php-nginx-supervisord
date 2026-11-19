@@ -1,5 +1,5 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
-FROM php:8.5.12-fpm-alpine3.24@sha256:951fb5b1780219b81d5daffa4cebef8e0077c537f3893d9790a5dfcd66ca334d AS php-base
+FROM php:8.5.13-fpm-alpine3.24@sha256:1712c76e2d29b8a3e966642fb120b02fa0c72616f8dc667b54ccd26e582d7856 AS php-base
 
 # Compile extensions separately so build tools and PECL artifacts stay out of runtime.
 FROM php-base AS extensions
@@ -29,7 +29,7 @@ RUN set -eux; \
     libzip-dev=1.11.4-r2 \
     linux-headers=7.0.0-r1 \
     openldap-dev=2.6.15-r0 \
-    openssl-dev=3.5.9-r0 \
+    openssl-dev=3.5.9-r1 \
     pcre-dev=8.45-r4 \
     tidyhtml-dev=5.8.0-r5 \
     yaml-dev=0.2.5-r2 \
