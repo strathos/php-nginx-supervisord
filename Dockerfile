@@ -138,7 +138,7 @@ RUN set -eux; \
     libxml2=2.13.9-r2 \
     libxslt=1.1.43-r4 \
     libzip=1.11.4-r2 \
-    mysql-client=11.8.9-r0 \
+    mysql-client=11.8.10-r0 \
     nginx=1.30.7-r0 \
     patch=2.8.1-r0 \
     pngquant=3.0.3-r0 \
