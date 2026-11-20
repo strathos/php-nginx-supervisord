@@ -1,5 +1,5 @@
 # from https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements
-FROM php:8.5.13-fpm-alpine3.24@sha256:1712c76e2d29b8a3e966642fb120b02fa0c72616f8dc667b54ccd26e582d7856 AS php-base
+FROM php:8.5.13-fpm-alpine3.24@sha256:51414d5291758fe27f58a64c7e8a078465d32cc7dcef7bda803f5b36019802e0 AS php-base
 
 # Compile extensions separately so build tools and PECL artifacts stay out of runtime.
 FROM php-base AS extensions
@@ -135,7 +135,7 @@ RUN set -eux; \
     libpng=1.6.59-r0 \
     libuuid=2.42.3-r1 \
     libwebp=1.6.0-r0 \
-    libxml2=2.13.9-r2 \
+    libxml2=2.13.9-r3 \
     libxslt=1.1.43-r4 \
     libzip=1.11.4-r2 \
     mysql-client=11.8.10-r0 \
