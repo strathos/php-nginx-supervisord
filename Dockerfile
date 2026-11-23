@@ -143,7 +143,7 @@ RUN set -eux; \
     patch=2.8.1-r0 \
     pngquant=3.0.3-r0 \
     rsync=3.5.2-r1 \
-    shadow=4.18.0-r1 \
+    shadow=4.20.4-r0 \
     su-exec=0.3-r0 \
     supervisor=4.3.0-r1 \
     tidyhtml-libs=5.8.0-r5 \
