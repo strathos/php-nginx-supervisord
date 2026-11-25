@@ -139,7 +139,7 @@ RUN set -eux; \
     libxslt=1.1.43-r4 \
     libzip=1.11.4-r2 \
     mysql-client=11.8.10-r0 \
-    nginx=1.30.7-r0 \
+    nginx=1.30.8-r0 \
     patch=2.8.1-r0 \
     pngquant=3.0.3-r0 \
     rsync=3.5.2-r1 \
