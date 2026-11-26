@@ -135,7 +135,7 @@ RUN set -eux; \
     libpng=1.6.59-r0 \
     libuuid=2.42.3-r1 \
     libwebp=1.6.0-r0 \
-    libxml2=2.13.9-r3 \
+    libxml2=2.13.9-r5 \
     libxslt=1.1.43-r4 \
     libzip=1.11.4-r2 \
     mysql-client=11.8.10-r0 \
