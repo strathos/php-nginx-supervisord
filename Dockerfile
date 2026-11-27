@@ -171,7 +171,7 @@ RUN usermod -u 1000 www-data && \
   chown -R www-data:www-data /var/www
 
 # Install Composer
-COPY --from=composer:2.11.3@sha256:4e5f671c4a5784b422c20fcb993a38da96529438889dbce40be27c452d18dd6d /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2.11.3@sha256:5b2137f112f939a92788ceb5e55f54859d9dbf467a44037cf7760bdda949f365 /usr/bin/composer /usr/local/bin/composer
 
 # Fail the build if an extension or one of its runtime libraries is missing.
 RUN php -r 'foreach (explode(" ", "bcmath bz2 calendar exif gd gmp intl ldap mysqli pcntl pdo_mysql soap sockets tidy xsl zip apcu ast ds event igbinary imagick mcrypt memcached oauth pcov redis uploadprogress uuid yaml xmlrpc") as $extension) { if (!extension_loaded($extension)) { fwrite(STDERR, "Missing PHP extension: $extension\n"); exit(1); } }'
